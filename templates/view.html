@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>🎁 Twój Secret Santa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1 class="header-decor">🎅 Ho Ho Ho!</h1>
+    <p>Cześć {{ name }}! W tym roku robisz prezent dla:</p>
+    <h2>{{ receiver }} 🎁</h2>
+    <p>Nie zdradzaj nikomu! 🤫</p>
+</div>
+<audio autoplay>
+    <source src="https://cdn.pixabay.com/download/audio/2023/01/17/audio_3f9d2d0de0.mp3?filename=jingle-bells-131774.mp3" type="audio/mpeg">
+</audio>
+<footer>🎅 Program stworzony przez <strong>Trolla</strong> – 2025 🎄</footer>
+</body>
+</html>
