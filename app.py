@@ -23,13 +23,18 @@ def index():
     if request.method == "POST":
         names = request.form["names"].strip().split("\n")
         names = [n.strip() for n in names if n.strip()]
-        shuffled = names.copy()
-        random.shuffle(shuffled)
+        if len(names) < 2:
+            return render_template("error.html", message="Musisz podać co najmniej 2 osoby 🎅")
 
-        for i in range(len(names)):
-            if names[i] == shuffled[i]:
+        # --- losowanie bez wylosowania siebie ---
+        def derange(lst):
+            while True:
+                shuffled = lst.copy()
                 random.shuffle(shuffled)
-                break
+                if all(a != b for a, b in zip(lst, shuffled)):
+                    return shuffled
+
+        shuffled = derange(names)
 
         pairs = {}
         for giver, receiver in zip(names, shuffled):
