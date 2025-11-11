@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>🎅 Secret Santa - Panel Organizatora</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="header-decor">🎄 Secret Santa 🎅</h1>
+        <p>Wpisz imiona uczestników (po jednym w wierszu):</p>
+
+        <form method="post">
+            <textarea name="names" rows="10" placeholder="Anna\nMichał\nKasia\nPiotr"></textarea><br>
+            <button type="submit">Losuj 🎁</button>
+        </form>
+    </div>
+    <footer>🎅 Program stworzony przez <strong>Trolla</strong> – 2025 🎄</footer>
+</body>
+</html>

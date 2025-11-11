@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>🎅 Secret Santa - Linki</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1 class="header-decor">🎄 Linki dla uczestników 🎁</h1>
+    <p>Wyślij każdemu jego unikalny link:</p>
+    <ul>
+        {% for giver, data in pairs.items() %}
+        <li>
+            <strong>{{ giver }}</strong> 👉 
+            <a href="{{ url_for('view', name=giver, token=data.token, _external=True) }}" target="_blank">
+                {{ url_for('view', name=giver, token=data.token, _external=True) }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+<footer>🎅 Program stworzony przez <strong>Trolla</strong> – 2025 🎄</footer>
+</body>
+</html>
